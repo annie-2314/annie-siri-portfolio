@@ -1,31 +1,25 @@
 import { Heart, ArrowUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
 const Footer = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
-
   const currentYear = new Date().getFullYear();
-
-  return (
-    <footer className="bg-card border-t border-border">
+  return <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col items-center text-center space-y-6">
           {/* Back to Top Button */}
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={scrollToTop}
-            className="hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-          >
+          <Button variant="outline" size="sm" onClick={scrollToTop} className="hover:bg-primary hover:text-primary-foreground transition-all duration-300">
             <ArrowUp className="w-4 h-4 mr-2" />
             Back to Top
           </Button>
 
           {/* Logo/Name */}
           <div>
-            <h3 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+            <h3 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-slate-950">
               Annie Siri
             </h3>
             <p className="text-muted-foreground mt-2">
@@ -35,34 +29,29 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="flex flex-wrap justify-center gap-6 text-sm">
-            <button 
-              onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
+            <button onClick={() => document.querySelector('#about')?.scrollIntoView({
+            behavior: 'smooth'
+          })} className="text-muted-foreground hover:text-primary transition-colors duration-200">
               About
             </button>
-            <button 
-              onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
+            <button onClick={() => document.querySelector('#projects')?.scrollIntoView({
+            behavior: 'smooth'
+          })} className="text-muted-foreground hover:text-primary transition-colors duration-200">
               Projects
             </button>
-            <button 
-              onClick={() => document.querySelector('#experience')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
+            <button onClick={() => document.querySelector('#experience')?.scrollIntoView({
+            behavior: 'smooth'
+          })} className="text-muted-foreground hover:text-primary transition-colors duration-200">
               Experience
             </button>
-            <button 
-              onClick={() => document.querySelector('#skills')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
+            <button onClick={() => document.querySelector('#skills')?.scrollIntoView({
+            behavior: 'smooth'
+          })} className="text-muted-foreground hover:text-primary transition-colors duration-200">
               Skills
             </button>
-            <button 
-              onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
+            <button onClick={() => document.querySelector('#contact')?.scrollIntoView({
+            behavior: 'smooth'
+          })} className="text-muted-foreground hover:text-primary transition-colors duration-200">
               Contact
             </button>
           </div>
@@ -84,8 +73,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
