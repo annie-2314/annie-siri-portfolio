@@ -1,14 +1,12 @@
 import { GraduationCap, Target, Heart } from 'lucide-react';
-
 const AboutSection = () => {
-  return (
-    <section id="about" className="py-20 bg-gradient-secondary">
+  return <section id="about" className="py-20 bg-gradient-secondary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              About <span className="bg-gradient-primary bg-clip-text text-transparent">Me</span>
+              About <span className="bg-gradient-primary bg-clip-text text-slate-950">Me</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Passionate about creating intelligent systems that can understand, learn, and adapt
@@ -95,8 +93,6 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;

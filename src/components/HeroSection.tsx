@@ -1,23 +1,23 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Download, Mail, ArrowDown } from 'lucide-react';
-
 const HeroSection = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
-
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+  return <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-hero opacity-10" />
       <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse" style={{
+      animationDelay: '1s'
+    }} />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -26,7 +26,7 @@ const HeroSection = () => {
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
                 <span className="block text-foreground">Hi, I'm</span>
-                <span className="block bg-gradient-primary bg-clip-text text-transparent">
+                <span className="block bg-gradient-primary bg-clip-text text-gray-950">
                   Annie Siri
                 </span>
               </h1>
@@ -44,20 +44,12 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button 
-                size="lg" 
-                className="bg-gradient-primary hover:shadow-medium transition-all duration-300 text-base font-semibold px-8"
-                onClick={() => scrollToSection('#contact')}
-              >
+              <Button size="lg" className="bg-gradient-primary hover:shadow-medium transition-all duration-300 text-base font-semibold px-8" onClick={() => scrollToSection('#contact')}>
                 <Mail className="mr-2 h-5 w-5" />
                 Contact Me
               </Button>
               
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-2 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 text-base font-semibold px-8"
-              >
+              <Button variant="outline" size="lg" className="border-2 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 text-base font-semibold px-8">
                 <Download className="mr-2 h-5 w-5" />
                 View Resume
               </Button>
@@ -81,7 +73,9 @@ const HeroSection = () => {
           </div>
 
           {/* Profile Image */}
-          <div className="flex justify-center lg:justify-end animate-scale-in" style={{ animationDelay: '0.3s' }}>
+          <div className="flex justify-center lg:justify-end animate-scale-in" style={{
+          animationDelay: '0.3s'
+        }}>
             <div className="relative">
               {/* Image Container */}
               <div className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-strong">
@@ -109,7 +103,9 @@ const HeroSection = () => {
                 <span className="text-2xl">🤖</span>
               </div>
               
-              <div className="absolute -bottom-2 -left-4 w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center shadow-soft animate-pulse" style={{ animationDelay: '1.5s' }}>
+              <div className="absolute -bottom-2 -left-4 w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center shadow-soft animate-pulse" style={{
+              animationDelay: '1.5s'
+            }}>
                 <span className="text-xl">⚡</span>
               </div>
             </div>
@@ -118,17 +114,12 @@ const HeroSection = () => {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <button
-            onClick={() => scrollToSection('#about')}
-            className="text-muted-foreground hover:text-primary transition-colors duration-200 flex flex-col items-center space-y-2"
-          >
+          <button onClick={() => scrollToSection('#about')} className="text-muted-foreground hover:text-primary transition-colors duration-200 flex flex-col items-center space-y-2">
             <span className="text-sm font-medium">Scroll down</span>
             <ArrowDown className="h-5 w-5" />
           </button>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
