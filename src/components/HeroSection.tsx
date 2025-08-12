@@ -1,8 +1,11 @@
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Download, Mail, ArrowDown } from 'lucide-react';
+
 const HeroSection = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
+
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
@@ -11,13 +14,15 @@ const HeroSection = () => {
       });
     }
   };
-  return <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+
+  return (
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-hero opacity-10" />
       <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse" style={{
-      animationDelay: '1s'
-    }} />
+        animationDelay: '1s'
+      }} />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -74,28 +79,20 @@ const HeroSection = () => {
 
           {/* Profile Image */}
           <div className="flex justify-center lg:justify-end animate-scale-in" style={{
-          animationDelay: '0.3s'
-        }}>
+            animationDelay: '0.3s'
+          }}>
             <div className="relative">
               {/* Image Container */}
               <div className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-strong">
                 <div className="absolute inset-0 bg-gradient-primary opacity-10 rounded-full" />
                 
-                {/* Placeholder for professional photo */}
-                <div className="w-full h-full bg-gradient-secondary flex items-center justify-center rounded-full border-4 border-primary/20">
-                  <div className="text-center space-y-2">
-                    <div className="w-20 h-20 bg-primary/20 rounded-full mx-auto flex items-center justify-center">
-                      <svg className="w-10 h-10 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <p className="text-muted-foreground text-sm">
-                      Professional Photo
-                      <br />
-                      Will be uploaded
-                    </p>
-                  </div>
-                </div>
+                {/* Professional Photo */}
+                <img 
+                  src="/lovable-uploads/17395293-1503-4a95-bdfb-4657012e0426.png"
+                  alt="Annie Siri - AI & Data Science Enthusiast"
+                  className="w-full h-full object-cover rounded-full"
+                  onLoad={() => setImageLoaded(true)}
+                />
               </div>
 
               {/* Floating Elements */}
@@ -104,8 +101,8 @@ const HeroSection = () => {
               </div>
               
               <div className="absolute -bottom-2 -left-4 w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center shadow-soft animate-pulse" style={{
-              animationDelay: '1.5s'
-            }}>
+                animationDelay: '1.5s'
+              }}>
                 <span className="text-xl">⚡</span>
               </div>
             </div>
@@ -120,6 +117,8 @@ const HeroSection = () => {
           </button>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;
